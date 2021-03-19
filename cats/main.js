@@ -82,7 +82,7 @@ $(document).ready(function () {
 	  inserendo solamente nome e colore e colore e opacità del fiocco per ogni gatto.*/
 
 	const newGatti = [];
-		gatti.forEach((elemento, index, array) => {
+		gatti.forEach((elemento) => {
 
 		if (elemento.sesso === "Femmina"){
 			let obj = {
@@ -102,8 +102,14 @@ $(document).ready(function () {
 			newGatti.push(obj);
 		}
 	});
-	console.log(newGatti);
+	console.log("Milestone 3: ", newGatti);
+
 
 });
-const setOpacitybyAge = (age) => age * 3.33;
+const setOpacitybyAge = (age) => {
+
+	na = age * 0.3;
+	return na.toFixed(2);
+
+};
 

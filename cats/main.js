@@ -45,7 +45,7 @@ $(document).ready(function () {
 	  ciascuno con il proprio colore e il proprio nome.*/
 
  	//scorro array e appendo nell'ul un li con il nome e colore
- 	gatti.forEach((elemento, index, array) => {
+ 	gatti.forEach((elemento) => {
  		let ul = $('#milestone1');
  		ul.append(`<li>${elemento.nome}  è un gatto di colore ${elemento.colore}</li>`);
  	});
@@ -76,5 +76,34 @@ $(document).ready(function () {
 		} else {
 			ul.append(`<li><i class="fas fa-ribbon femmina"></i> ${elemento.nome}  è un gatto di colore ${elemento.colore}</li>`);
 		}
-	})
+	});
+	/*Milestone 3
+	  Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio,
+	  inserendo solamente nome e colore e colore e opacità del fiocco per ogni gatto.*/
+
+	const newGatti = [];
+		gatti.forEach((elemento, index, array) => {
+
+		if (elemento.sesso === "Femmina"){
+			let obj = {
+				nome: elemento.nome,
+				colore: elemento.colore,
+				opacita: setOpacitybyAge(elemento.eta)
+			}
+			newGatti.push(obj);
+
+		}
+		if (elemento.sesso === "Maschio"){
+			let obj = {
+				nome: elemento.nome,
+				colore: elemento.colore,
+				opacita: setOpacitybyAge(elemento.eta)
+			}
+			newGatti.push(obj);
+		}
+	});
+	console.log(newGatti);
+
 });
+const setOpacitybyAge = (age) => age * 3.33;
+

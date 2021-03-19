@@ -115,7 +115,7 @@ $(document).ready(function () {
 		}
 		bonusGatti.push(obj);
 	});
-	//stampo in una lista in aggiungedo classe sesso e opacità
+	//stampo in una lista in aggiungendo classe sesso e opacità
 	bonusGatti.forEach((elemento, index) => {
 		let ul = $('#milestone3-1');
 		let sesso = elemento.sesso //mi serve per fare il lowercase della classe

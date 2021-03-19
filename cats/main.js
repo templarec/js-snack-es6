@@ -120,7 +120,7 @@ $(document).ready(function () {
 		let ul = $('#milestone3-1');
 		let sesso = elemento.sesso //mi serve per fare il lowercase della classe
 			ul.append(`<li><i class="fas fa-ribbon ${sesso.toLowerCase()}"></i> ${elemento.nome}  è un gatto di colore ${elemento.colore}</li>`);
-			console.log(ul.children('li').eq(index).children('i').css("opacity", elemento.opacita));
+			ul.children('li').eq(index).children('i').css("opacity", elemento.opacita);
 
 	});
 

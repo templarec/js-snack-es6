@@ -3,37 +3,37 @@ $(document).ready(function () {
  	const gatti = [
 	 {
 	 	nome: "Daisy",
-		eta: 4,
+		eta: 30,
 		colore: "Tigrato",
 		sesso: "Femmina"
 	 },
 	 {
 		 nome: "Liliana",
-		 eta: 4,
+		 eta: 15,
 		 colore: "Tigrato",
 		 sesso: "Femmina"
 	 },
 	 {
 		 nome: "Murphy",
-		 eta: 3,
+		 eta: 15,
 		 colore: "Tuxedo",
 		 sesso: "Maschio"
 	 },
 	 {
 		 nome: "Arturino",
-		 eta: 3,
+		 eta: 30,
 		 colore: "Bianco/Tigrato",
 		 sesso: "Maschio"
 	 },
 	 {
 		 nome: "Onofrio",
-		 eta: 1,
+		 eta: 7,
 		 colore: "Nero",
 		 sesso: "Maschio"
 	 },
 	{
 		nome: "Gigia",
-		eta: 1,
+		eta: 7,
 		colore: "Rosso",
 		sesso: "Femmina"
 	}
@@ -88,7 +88,7 @@ $(document).ready(function () {
 			let obj = {
 				nome: elemento.nome,
 				colore: elemento.colore,
-				opacita: setOpacitybyAge(elemento.eta)
+				opacita: setOpacityByAge(elemento.eta)
 			}
 			newGatti.push(obj);
 
@@ -97,18 +97,37 @@ $(document).ready(function () {
 			let obj = {
 				nome: elemento.nome,
 				colore: elemento.colore,
-				opacita: setOpacitybyAge(elemento.eta)
+				opacita: setOpacityByAge(elemento.eta)
 			}
 			newGatti.push(obj);
 		}
 	});
 	console.log("Milestone 3: ", newGatti);
+	//Milestone 3.1 Bonus
+	//creo nuovo array gatti come milestone 2 aggiungendoci proprietà sesso
+	const bonusGatti = [];
+	gatti.forEach((elemento) => {
+		let obj = {
+			nome: elemento.nome,
+			colore: elemento.colore,
+			opacita: setOpacityByAge(elemento.eta),
+			sesso: elemento.sesso
+		}
+		bonusGatti.push(obj);
+	});
+	//stampo in una lista in aggiungedo classe sesso e opacità
+	bonusGatti.forEach((elemento, index) => {
+		let ul = $('#milestone3-1');
+		let sesso = elemento.sesso //mi serve per fare il lowercase della classe
+			ul.append(`<li><i class="fas fa-ribbon ${sesso.toLowerCase()}"></i> ${elemento.nome}  è un gatto di colore ${elemento.colore}</li>`);
+			console.log(ul.children('li').eq(index).children('i').css("opacity", elemento.opacita));
 
+	});
 
 });
-const setOpacitybyAge = (age) => {
-
-	na = age * 0.3;
+const setOpacityByAge = (age) => {
+	let na;
+	na = age * 0.03;
 	return na.toFixed(2);
 
 };

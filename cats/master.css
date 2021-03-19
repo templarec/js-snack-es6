@@ -1,4 +1,17 @@
 body {
     font-size: 18px;
-    font-family: Arial;
+    font-family: "Arial", sans-serif;
+}
+.legenda li {
+    display: inline-block;
+    padding: 0 5px;
+}
+i.maschio {
+    color: blue;
+}
+i.femmina {
+    color: deeppink;
+}
+i.giovane{
+    opacity: 0.4;
 }
